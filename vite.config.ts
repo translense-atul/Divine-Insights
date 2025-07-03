@@ -4,12 +4,13 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
-  root: 'client',
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'client/src'),
+      '@': path.resolve(__dirname, 'src'),
       '@shared': path.resolve(__dirname, 'shared'),
     },
   },
 })
+
+
