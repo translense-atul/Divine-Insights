@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(266, 85%, 58%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Enhanced astrology theme colors */
+  --cosmic-purple: hsl(280, 95%, 25%);
+  --mystical-indigo: hsl(248, 95%, 35%);
+  --celestial-blue: hsl(220, 95%, 45%);
+  --starlight-gold: hsl(48, 100%, 70%);
+  --moon-silver: hsl(240, 15%, 85%);
+  --deep-space: hsl(240, 100%, 5%);
+  --nebula-purple: hsl(270, 100%, 15%);
+  --aurora-teal: hsl(180, 100%, 35%);
+  --sunset-orange: hsl(25, 100%, 60%);
+  --mystic-rose: hsl(330, 100%, 75%);
+  --shadow-black: hsl(0, 0%, 8%);
+  --stardust: hsl(45, 100%, 95%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(266, 85%, 58%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .heading-font {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .cosmic-gradient {
+    background: radial-gradient(ellipse at top, var(--deep-space) 0%, var(--cosmic-purple) 30%, var(--mystical-indigo) 60%, var(--nebula-purple) 100%);
+  }
+  
+  .celestial-pattern {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3Cpattern id='constellation' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='50' cy='50' r='2' fill='rgba(255,255,255,0.8)'/%3E%3Ccircle cx='150' cy='100' r='1.5' fill='rgba(255,255,255,0.6)'/%3E%3Ccircle cx='100' cy='150' r='1' fill='rgba(255,255,255,0.4)'/%3E%3Cline x1='50' y1='50' x2='150' y2='100' stroke='rgba(255,255,255,0.2)' stroke-width='1'/%3E%3Cline x1='150' y1='100' x2='100' y2='150' stroke='rgba(255,255,255,0.2)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23constellation)'/%3E%3C/svg%3E");
+  }
+  
+  .starlight-text {
+    background: linear-gradient(45deg, var(--starlight-gold), var(--mystic-rose), var(--aurora-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.2) saturate(1.3); }
+  }
+  
+  .mystical-button {
+    background: linear-gradient(135deg, var(--starlight-gold), var(--sunset-orange));
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mystical-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+  }
+  
+  .mystical-button:hover::before {
+    animation: shine 0.6s ease-in-out;
+  }
+  
+  .mystical-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+  }
+  
+  @keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+  }
+  
+  .enchanted-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  
+  .enchanted-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--cosmic-purple), var(--mystical-indigo), var(--celestial-blue));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  
+  .enchanted-card:hover::before {
+    opacity: 0.1;
+  }
+  
+  .enchanted-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(128, 0, 255, 0.3);
+  }
+  
+  .cosmic-glass {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .zodiac-border {
+    border-image: linear-gradient(45deg, var(--starlight-gold), var(--mystic-rose), var(--aurora-teal)) 1;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-cosmic-glow {
+    text-shadow: 0 0 10px var(--starlight-gold), 0 0 20px var(--starlight-gold), 0 0 30px var(--starlight-gold);
+  }
+  
+  .bg-cosmic {
+    background-color: var(--cosmic-purple);
+  }
+  
+  .bg-deep-space {
+    background-color: var(--deep-space);
+  }
+  
+  .bg-nebula {
+    background-color: var(--nebula-purple);
+  }
+  
+  /* Animation utilities */
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  .animate-spin-reverse {
+    animation: spin-reverse 15s linear infinite;
+  }
+  
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+}
+  
+  .text-starlight {
+    color: var(--starlight-gold);
+  }
+  
+  .text-mystic {
+    color: var(--mystic-rose);
+  }
+  
+  .text-aurora {
+    color: var(--aurora-teal);
+  }
+  
+  .border-starlight {
+    border-color: var(--starlight-gold);
+  }
+  
+  .border-cosmic {
+    border-color: var(--cosmic-purple);
+  }
+  
+  .mystical-font {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
