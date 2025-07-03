@@ -16,7 +16,7 @@ import { Phone, Clock, IndianRupee, Send } from "lucide-react";
 
 export default function ContactSection() {
   const { toast } = useToast();
-  
+
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
     defaultValues: {
@@ -65,7 +65,7 @@ export default function ContactSection() {
             Ready to discover what the universe has in store for you?
           </p>
         </div>
-        
+
         <div className="max-w-6xl mx-auto">
           <Card className="shadow-2xl border-0">
             <CardContent className="p-0">
@@ -73,7 +73,7 @@ export default function ContactSection() {
                 {/* Contact Form */}
                 <div className="p-8 lg:p-12">
                   <h3 className="text-2xl font-semibold heading-font mb-6">Send a Message</h3>
-                  
+
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <FormField
@@ -83,8 +83,8 @@ export default function ContactSection() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-semibold">Full Name</FormLabel>
                             <FormControl>
-                              <Input 
-                                {...field} 
+                              <Input
+                                {...field}
                                 className="border-2 border-gray-200 focus:border-primary-purple rounded-lg p-3"
                                 placeholder="Enter your full name"
                               />
@@ -93,7 +93,7 @@ export default function ContactSection() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="phone"
@@ -101,8 +101,8 @@ export default function ContactSection() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-semibold">Phone Number</FormLabel>
                             <FormControl>
-                              <Input 
-                                {...field} 
+                              <Input
+                                {...field}
                                 type="tel"
                                 className="border-2 border-gray-200 focus:border-primary-purple rounded-lg p-3"
                                 placeholder="Enter your phone number"
@@ -112,7 +112,7 @@ export default function ContactSection() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="email"
@@ -120,8 +120,8 @@ export default function ContactSection() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-semibold">Email Address</FormLabel>
                             <FormControl>
-                              <Input 
-                                {...field} 
+                              <Input
+                                {...field}
                                 type="email"
                                 className="border-2 border-gray-200 focus:border-primary-purple rounded-lg p-3"
                                 placeholder="Enter your email address"
@@ -131,7 +131,7 @@ export default function ContactSection() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="service"
@@ -156,7 +156,7 @@ export default function ContactSection() {
                           </FormItem>
                         )}
                       />
-                      
+
                       <FormField
                         control={form.control}
                         name="message"
@@ -164,8 +164,7 @@ export default function ContactSection() {
                           <FormItem>
                             <FormLabel className="text-gray-700 font-semibold">Message (Optional)</FormLabel>
                             <FormControl>
-                              <Textarea 
-                                {...field} 
+                              <Textarea {...field} value={field.value ?? ''}
                                 className="border-2 border-gray-200 focus:border-primary-purple rounded-lg p-3 min-h-[120px]"
                                 placeholder="Tell me about your concerns or questions..."
                               />
@@ -174,9 +173,9 @@ export default function ContactSection() {
                           </FormItem>
                         )}
                       />
-                      
-                      <Button 
-                        type="submit" 
+
+                      <Button
+                        type="submit"
                         disabled={contactMutation.isPending}
                         className="w-full bg-gradient-to-r from-primary-purple to-secondary-purple hover:from-secondary-purple hover:to-primary-purple text-white py-6 text-lg font-semibold rounded-full transition-all duration-300"
                       >
@@ -186,18 +185,18 @@ export default function ContactSection() {
                     </form>
                   </Form>
                 </div>
-                
+
                 {/* Contact Information */}
                 <div className="bg-gradient-to-br from-midnight to-deep-blue text-white p-8 lg:p-12 rounded-r-lg">
                   <h3 className="text-2xl font-semibold heading-font mb-8">Direct Contact</h3>
-                  
+
                   <div className="space-y-8">
                     <div className="flex items-start space-x-4">
                       <Phone className="h-8 w-8 text-gold mt-1 flex-shrink-0" />
                       <div>
                         <h5 className="text-xl font-semibold mb-2">Phone Consultation</h5>
-                        <a 
-                          href="tel:8881157770" 
+                        <a
+                          href="tel:8881157770"
                           className="text-2xl font-bold text-gold hover:text-yellow-300 transition-colors heading-font"
                         >
                           8881157770
@@ -205,7 +204,7 @@ export default function ContactSection() {
                         <p className="text-white/70 mt-1">Available 9 AM - 9 PM, 7 days a week</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <Clock className="h-8 w-8 text-gold mt-1 flex-shrink-0" />
                       <div>
@@ -214,7 +213,7 @@ export default function ContactSection() {
                         <p className="text-white/70">Flexible timing available for urgent consultations</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <IndianRupee className="h-8 w-8 text-gold mt-1 flex-shrink-0" />
                       <div>
@@ -224,11 +223,11 @@ export default function ContactSection() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-8">
-                    <img 
-                      src="https://images.unsplash.com/photo-1551554781-c46200ea959d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
-                      alt="Tarot cards spread with mystical background" 
+                    <img
+                      src="https://images.unsplash.com/photo-1551554781-c46200ea959d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300"
+                      alt="Tarot cards spread with mystical background"
                       className="rounded-lg w-full opacity-80"
                     />
                   </div>
