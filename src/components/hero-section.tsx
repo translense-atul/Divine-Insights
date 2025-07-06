@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { Phone, Clock, IndianRupee, Stars, Sparkles } from "lucide-react";
 
 import profileImage from "@/assests/PHOTO-2025-07-02-07-38-30_1751545660833.jpg";
@@ -36,12 +36,62 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="text-white space-y-8">
+          {/* Image First on Mobile, Second on Large Screens */}
+          <div className="order-1 lg:order-2 text-center relative mb-12 lg:mb-0">
+            <div className="relative inline-block">
+              <div className="absolute inset-0 bg-gradient-to-r from-starlight to-mystic rounded-full opacity-20 blur-2xl scale-110"></div>
+              <img
+                src={profileImage}
+                alt="Your Spiritual Guide - Astrology Expert"
+                className="relative rounded-full shadow-2xl max-w-sm mx-auto w-full border-4 border-starlight/30"
+              />
+              <div className="absolute -top-4 -right-4 text-starlight animate-spin-slow">
+                <Stars size={32} />
+              </div>
+              <div className="absolute -bottom-4 -left-4 text-mystic animate-pulse">
+                <Sparkles size={28} />
+              </div>
+            </div>
+
+            {/* Cosmic Mandala Design */}
+            <div className="mt-12 relative">
+              <svg className="w-64 h-64 mx-auto opacity-30" viewBox="0 0 200 200">
+                <defs>
+                  <radialGradient id="cosmic-gradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
+                    <stop offset="50%" stopColor="#DA70D6" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#4169E1" stopOpacity="0.4" />
+                  </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="2" className="animate-spin-slow" />
+                <circle cx="100" cy="100" r="60" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="1.5" className="animate-spin-reverse" />
+                <circle cx="100" cy="100" r="30" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="1" className="animate-spin-slow" />
+                <g className="animate-pulse">
+                  <circle cx="100" cy="40" r="3" fill="#FFD700" />
+                  <circle cx="160" cy="100" r="3" fill="#DA70D6" />
+                  <circle cx="100" cy="160" r="3" fill="#4169E1" />
+                  <circle cx="40" cy="100" r="3" fill="#20B2AA" />
+                  <circle cx="130" cy="70" r="2" fill="#FFD700" />
+                  <circle cx="130" cy="130" r="2" fill="#DA70D6" />
+                  <circle cx="70" cy="130" r="2" fill="#4169E1" />
+                  <circle cx="70" cy="70" r="2" fill="#20B2AA" />
+                </g>
+              </svg>
+            </div>
+
+            <div className="mt-8 text-center">
+              <h3 className="text-2xl font-bold text-starlight mystical-font mb-2">Master of Cosmic Arts</h3>
+              <p className="text-white/80 text-lg">Guiding souls through celestial wisdom</p>
+            </div>
+          </div>
+
+          {/* Text and Buttons */}
+          <div className="order-2 lg:order-1 text-white space-y-8">
             <div className="space-y-4">
               <h1 className="text-6xl lg:text-7xl font-bold mystical-font starlight-text mb-6 text-cosmic-glow">
                 Divine Insights
               </h1>
-              <h2 className="text-3xl lg:text-4xl font-semibold text-white/90 heading-font">
+              <h2 className="text-3xl lg:text-4xl font-semibold mystical-font starlight-text heading-font">
                 Unlock Your Cosmic Destiny
               </h2>
             </div>
@@ -87,60 +137,6 @@ export default function HeroSection() {
                 <IndianRupee className="ml-6 mr-1 h-5 w-5 text-starlight" />
                 <span>₹5 per minute</span>
               </div>
-            </div>
-          </div>
-
-          <div className="text-center relative">
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-starlight to-mystic rounded-full opacity-20 blur-2xl scale-110"></div>
-              <img
-                src={profileImage}
-                alt="Your Spiritual Guide - Astrology Expert"
-                className="relative rounded-full shadow-2xl max-w-sm mx-auto w-full border-4 border-starlight/30"
-              />
-              <div className="absolute -top-4 -right-4 text-starlight animate-spin-slow">
-                <Stars size={32} />
-              </div>
-              <div className="absolute -bottom-4 -left-4 text-mystic animate-pulse">
-                <Sparkles size={28} />
-              </div>
-            </div>
-
-            {/* Cosmic Mandala Design */}
-            <div className="mt-12 relative">
-              <svg className="w-64 h-64 mx-auto opacity-30" viewBox="0 0 200 200">
-                <defs>
-                  <radialGradient id="cosmic-gradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
-                    <stop offset="50%" stopColor="#DA70D6" stopOpacity="0.6" />
-                    <stop offset="100%" stopColor="#4169E1" stopOpacity="0.4" />
-                  </radialGradient>
-                </defs>
-
-                {/* Outer circle */}
-                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="2" className="animate-spin-slow" />
-
-                {/* Inner cosmic pattern */}
-                <circle cx="100" cy="100" r="60" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="1.5" className="animate-spin-reverse" />
-                <circle cx="100" cy="100" r="30" fill="none" stroke="url(#cosmic-gradient)" strokeWidth="1" className="animate-spin-slow" />
-
-                {/* Star points */}
-                <g className="animate-pulse">
-                  <circle cx="100" cy="40" r="3" fill="#FFD700" />
-                  <circle cx="160" cy="100" r="3" fill="#DA70D6" />
-                  <circle cx="100" cy="160" r="3" fill="#4169E1" />
-                  <circle cx="40" cy="100" r="3" fill="#20B2AA" />
-                  <circle cx="130" cy="70" r="2" fill="#FFD700" />
-                  <circle cx="130" cy="130" r="2" fill="#DA70D6" />
-                  <circle cx="70" cy="130" r="2" fill="#4169E1" />
-                  <circle cx="70" cy="70" r="2" fill="#20B2AA" />
-                </g>
-              </svg>
-            </div>
-
-            <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold text-starlight mystical-font mb-2">Master of Cosmic Arts</h3>
-              <p className="text-white/80 text-lg">Guiding souls through celestial wisdom</p>
             </div>
           </div>
         </div>
